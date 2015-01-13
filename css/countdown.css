@@ -1,0 +1,115 @@
+@import url(http://fonts.googleapis.com/css?family=Mountains+of+Christmas:400,700);
+
+body {
+	background-color: #C21F1F;
+	font-family: 'Avenir Next', sans-serif;
+	text-align: center;
+	margin-top: 1%;
+}
+
+.donate:hover {
+	opacity: 0.80;
+}
+
+.donate:active {
+	opacity: 0.90;
+}
+
+h1 {
+	font-family: 'Mountains of Christmas', cursive;
+	font-size: 55px;
+	font-weight: bold;
+	-webkit-font-smoothing: antialiased;
+	margin-top: 50px;
+}
+
+.jumbotron-o {
+  padding: 30px 30px 30px 30px;
+  margin-bottom: 30px;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 2.1428571435;
+  color: inherit;
+  background-color: #FFFFFF;
+}
+
+#cntdwn {
+	vertical-align: center;
+	font-size: 16px;
+}
+
+#img_container {
+	border-top-left-radius: 999px; 
+	border-top-right-radius: 999px; 
+	border-bottom-right-radius: 999px; 
+	border-bottom-left-radius: 999px; 
+	width: 400px; 
+	height: 400px;
+	overflow: hidden; 
+	text-align: center;
+	vertical-align: center;
+	margin: 0 auto;
+	margin-top: -115px;
+}
+
+.hat {
+	width: 375px;
+	height: 375px;
+	margin: 0 auto;
+	margin-right: -62px;
+}
+
+@media screen and (max-device-width: 480px) {
+	body {
+		background-color: #C21F1F;
+		font-family: 'Avenir Next', sans-serif;
+		text-align: center;
+		margin-top: 30%;
+	}
+
+	h1 {
+		font-family: 'Mountains of Christmas', cursive;
+		font-size: 25px;
+		font-weight: bold;
+		-webkit-font-smoothing: antialiased;
+		margin-top: 50px;
+	}
+
+	.jumbotron-o {
+	  padding: 30px 30px 30px 30px;
+	  margin-bottom: 30px;
+	  font-size: 21px;
+	  font-weight: 200;
+	  line-height: 2.1428571435;
+	  color: inherit;
+	  background-color: #FFFFFF;
+	}
+
+	#cntdwn {
+		vertical-align: center;
+		font-size: 12px;
+	}
+
+	#img_container {
+		border-top-left-radius: 999px; 
+		border-top-right-radius: 999px; 
+		border-bottom-right-radius: 999px; 
+		border-bottom-left-radius: 999px; 
+		width: 300px; 
+		height: 300px;
+		overflow: hidden; 
+		text-align: center;
+		vertical-align: center;
+		margin: 0 auto;
+		margin-top: -115px;
+	}
+
+	.hat {
+		margin: 0 auto;
+		margin-right: -16px;
+		margin-top: -10px;
+		width: 50px;
+		height: 50px;
+	}
+}
+
