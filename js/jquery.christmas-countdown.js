@@ -9,6 +9,7 @@
     var DisplayFormat;
     var FinishMessage;
     var SetTimeOutPeriod;
+    var PutSpan;
 
     function calcage(secs, num1, num2) {
         s = ((Math.floor(secs / num1)) % num2).toString();
@@ -17,7 +18,7 @@
         return "<b>" + s + "</b>";
     }
 
-    function CountBack(secs ,element) {
+    function CountBack(secs, element) {
         if (secs < 0) {
             $(element).html(FinishMessage);
             return;
@@ -34,27 +35,29 @@
         }
     }
 
-    function putspan(backcolor, forecolor) {
-        document.write("<span id='cntdwn' style='background-color:" + backcolor +
-            "; color:" + forecolor + "'></span>");
+    function putspan(backcolor, forecolor, element) {
+        $(element).css('background-color', backcolor);
+        $(element).css('color', forecolor);
     }
 
     $.fn.christmasCountdown = function(options) {
         var dt = new Date();
         var params = $.extend({
-          TargetDate : "12/25/"+dt.getYear()+" 12:00 AM",
-    			BackColor : "white",
-    			ForeColor : "black",
-    			CountActive : true,
-    			CountStepper : -1,
-    			LeadingZero : true,
-    			DisplayFormat : "%%D%% Days, %%H%% Hours, %%M%% Minutes, %%S%% Seconds.",
-    			FinishMessage : "It is finally here! Merry Christmas!"
+            TargetDate: "12/25/" + dt.getYear() + " 12:00 AM",
+            BackColor: "white",
+            ForeColor: "black",
+            PutSpan: false,
+            CountActive: true,
+            CountStepper: -1,
+            LeadingZero: true,
+            DisplayFormat: "%%D%% Days, %%H%% Hours, %%M%% Minutes, %%S%% Seconds.",
+            FinishMessage: "It is finally here! Merry Christmas!"
         }, options);
 
         TargetDate = params.TargetDate;
         BackColor = params.BackColor;
         ForeColor = params.ForeColor;
+        PutSpan = params.PutSpan;
         CountActive = params.CountActive;
         CountStepper = params.CountStepper;
         LeadingZero = params.LeadingZero;
@@ -83,7 +86,10 @@
         if (CountStepper == 0)
             CountActive = false;
         SetTimeOutPeriod = (Math.abs(CountStepper) - 1) * 1000 + 990;
-        // putspan(BackColor, ForeColor);
+        if (PutSpan) {
+            putspan(BackColor, ForeColor, this);
+        }
+
         var dthen = new Date(TargetDate);
         var dnow = new Date();
         if (CountStepper > 0)

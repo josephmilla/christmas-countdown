@@ -9,73 +9,74 @@
 <html lang="en">
 
 <head>
-	<title>Countdown to Christmas 2015</title>
-	<!-- METADATA -->
-	<meta name="viewport" http-equiv="Content-Type" content="width=device-width, text/html; charset=utf-8,user-scalable=no, initial-scale=1, maximum-scale=1" />
-	<meta name="description" content="The true meaning of Christmas doesn't come from a store." />
-	<meta property="og:image" content="img/countdown.png" />
-	<meta property="og:image:secure_url" content="img/countdown.png" />
+    <title>Countdown to Christmas 2015</title>
+    <!-- METADATA -->
+    <meta name="viewport" http-equiv="Content-Type" content="width=device-width, text/html; charset=utf-8,user-scalable=no, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="The true meaning of Christmas doesn't come from a store." />
+    <meta property="og:image" content="img/countdown.png" />
+    <meta property="og:image:secure_url" content="img/countdown.png" />
 
-	<!-- IMPORTED LIBRARIES -->
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <!-- IMPORTED LIBRARIES -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
-	<!-- IMPORTED LIBRARIES:STYLESHEETS -->
-	<!-- STYLESHEETS::BOOTSTRAP 3.0.2 -->
-	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
-	<!-- <link href="css/bootstrap-select.min.css" rel="stylesheet"> -->
+    <!-- IMPORTED LIBRARIES:STYLESHEETS -->
+    <!-- STYLESHEETS::BOOTSTRAP 3.0.2 -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
+    <!-- <link href="css/bootstrap-select.min.css" rel="stylesheet"> -->
 
-	<!-- ICONS -->
-	<link href="img/christmas_ball-512.png" rel="image_src" />
-	<link href="img/christmas_ball-512.png" rel="shortcut icon" />
-	<link href="img/christmas_ball-512.png" rel="apple-touch-icon-precomposed" />
+    <!-- ICONS -->
+    <link href="img/christmas_ball-512.png" rel="image_src" />
+    <link href="img/christmas_ball-512.png" rel="shortcut icon" />
+    <link href="img/christmas_ball-512.png" rel="apple-touch-icon-precomposed" />
 
-	<!-- STYLESHEETS -->
-	<link href="css/countdown.css" rel="stylesheet">
+    <!-- STYLESHEETS -->
+    <link href="css/countdown.css" rel="stylesheet">
 </head>
 
 <body>
-	<div class="container">
-		<img class="hat" alt="" src="img/hat-512.png" />
-		<div id="img_container" class="jumbotron-o">
-			<center>
-				<br>
-				<h1>Countdown to Christmas 2018!</h1>
-				<div id="cntdwn">
+    <div class="container">
+        <img class="hat" alt="" src="img/hat-512.png" />
+        <div id="img_container" class="jumbotron-o">
+            <center>
+                <br>
+                <h1>Countdown to Christmas 2018!</h1>
+                <div id="cntdwn">
 
-				</div>
-				<a href="http://www.redcross.org/charitable-donations"><img class="donate" style="margin: auto; margin-top: 20px;" alt="" src="img/christmas_tree-512.png" width="50px" height="50px" /></a>
-			</center>
-		</div>
-	</div>
+                </div>
+                <a href="http://www.redcross.org/charitable-donations"><img class="donate" style="margin: auto; margin-top: 20px;" alt="" src="img/christmas_tree-512.png" width="50px" height="50px" /></a>
+            </center>
+        </div>
+    </div>
 
-	<!-- IMPORTED LIBRARIES:JAVASCRIPT -->
-	<!-- JAVASCRIPT::JQUERY 2.0.3 -->
-	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-	<!-- JAVASCRIPT::BOOTSTRAP 3.0.2 -->
-	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
-	<!-- JAVASCRIPT::BOOTBOX 4.X.X -->
+    <!-- IMPORTED LIBRARIES:JAVASCRIPT -->
+    <!-- JAVASCRIPT::JQUERY 2.0.3 -->
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <!-- JAVASCRIPT::BOOTSTRAP 3.0.2 -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <!-- JAVASCRIPT::BOOTBOX 4.X.X -->
 
 
-	<!-- JAVASCRIPT -->
-	<script src="js/jquery.christmas-countdown.js"></script>
-	<script src="js/snow.js"></script>
+    <!-- JAVASCRIPT -->
+    <script src="js/jquery.christmas-countdown.js"></script>
+    <script src="js/snow.js"></script>
 
-	<script>
-		var params = {
-			TargetDate : "12/25/2018 12:00 AM",
-			BackColor : "white",
-			ForeColor : "black",
-			CountActive : true,
-			CountStepper : -1,
-			LeadingZero : true,
-			DisplayFormat : "%%D%% Days, %%H%% Hours, %%M%% Minutes, %%S%% Seconds.",
-			FinishMessage : "It is finally here! Merry Christmas!"
-		};
+    <script>
+        $(document).ready(function() {
 
-		$(document).ready(function() {
-			$('#cntdwn').christmasCountdown(params);
-		});
-	</script>
+            $('#cntdwn').christmasCountdown({
+                TargetDate: "12/25/2018 12:00 AM",
+                BackColor: "white",
+                ForeColor: "black",
+                PutSpan: true,
+                CountActive: true,
+                CountStepper: -1,
+                LeadingZero: true,
+                DisplayFormat: "%%D%% Days, %%H%% Hours, %%M%% Minutes, %%S%% Seconds.",
+                FinishMessage: "It is finally here! Merry Christmas!"
+            });
+
+        });
+    </script>
 </body>
 
 </html>
