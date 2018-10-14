@@ -17,20 +17,19 @@
         return "<b>" + s + "</b>";
     }
 
-    function CountBack(secs) {
+    function CountBack(secs ,element) {
         if (secs < 0) {
-            document.getElementById("cntdwn").innerHTML = FinishMessage;
+            $(element).html(FinishMessage);
             return;
         }
         DisplayStr = DisplayFormat.replace(/%%D%%/g, calcage(secs, 86400, 100000));
         DisplayStr = DisplayStr.replace(/%%H%%/g, calcage(secs, 3600, 24));
         DisplayStr = DisplayStr.replace(/%%M%%/g, calcage(secs, 60, 60));
         DisplayStr = DisplayStr.replace(/%%S%%/g, calcage(secs, 1, 60));
-
-        document.getElementById("cntdwn").innerHTML = DisplayStr;
+        $(element).html(DisplayStr);
         if (CountActive) {
             setTimeout(function() {
-                CountBack(secs + CountStepper);
+                CountBack(secs + CountStepper, element);
             }, SetTimeOutPeriod);
         }
     }
@@ -92,7 +91,8 @@
         else
             ddiff = new Date(dthen - dnow);
         gsecs = Math.floor(ddiff.valueOf() / 1000);
-        CountBack(gsecs);
+        return CountBack(gsecs, this);
+
     }
 
 }(jQuery));
